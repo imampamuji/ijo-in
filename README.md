@@ -9,6 +9,6 @@ Helps and makes it easier for users who like plants and share with each other!
 
 
 ## 📈Progress
-##### Date: 28/08/2023 | Task 1 - Layouting XML 
+##### Date: 28/08/2023 | [Task 1 - Layouting XML](https://github.com/imampamuji/ijo-in/tree/task-layouting) 
 - Layouting Registration Page
 - Layouting Login Page 
