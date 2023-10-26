@@ -12,6 +12,10 @@ Helps and makes it easier for users who like plants and share with each other!
 ##### Date: 28/08/2023 | [Task 1 - Layouting XML](https://github.com/imampamuji/ijo-in/tree/task-layouting)
 - Layouting Registration Page
 - Layouting Login Page
+  
 ##### Date: 15/09/2023 | [Task 2 - Navigation](https://github.com/imampamuji/ijo-in/tree/task-navigation)
 - Layouting Registration Page
-- Layouting Login Page 
+- Layouting Login Page
+
+##### Date: 19/10/2023 | [Task 3 - Project Progress 1](https://github.com/imampamuji/ijo-in/tree/task-register-database)
+- Registration database room
