@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EBFCFB">
+    tools:context=".ui.register.RegisFragment">
+
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="413dp"
         android:layout_height="253dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113"
         app:srcCompat="@drawable/banner_daftar" />
 
     <TextView
@@ -51,8 +54,8 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background_green2">
 
-            <TextView
-                android:id="@+id/textView11"
+            <EditText
+                android:id="@+id/etName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Your Name"
@@ -72,8 +75,8 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background_green2">
 
-            <TextView
-                android:id="@+id/textView10"
+            <EditText
+                android:id="@+id/etEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Your Email"
@@ -93,8 +96,8 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_background_green2">
 
-            <TextView
-                android:id="@+id/textView14"
+            <EditText
+                android:id="@+id/etPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password"
@@ -129,6 +132,7 @@
         <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_regis"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="50dp"
@@ -149,4 +153,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

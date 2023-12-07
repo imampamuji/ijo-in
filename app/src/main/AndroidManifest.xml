@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Ijoin"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisActivity"
+            android:exported="false"
+            android:label="@string/title_activity_regis"
+            android:theme="@style/Theme.Ijoin" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
