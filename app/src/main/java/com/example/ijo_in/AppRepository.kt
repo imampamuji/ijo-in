@@ -1,10 +1,16 @@
 package com.example.ijo_in
 
 import com.example.ijo_in.data.local.AppDatabase
-import com.example.ijo_in.data.local.UserEntity
+import com.example.ijo_in.data.local.LocalRepository
+import com.example.ijo_in.data.local.entity.UserEntity
+import com.example.ijo_in.data.remote.RemoteRepository
 
-class AppRepository(private val appDatabase: AppDatabase) {
+class AppRepository(private val localRepository: LocalRepository, private val remoteRepository: RemoteRepository) {
     suspend fun insertUser(user: UserEntity) {
-        appDatabase.userDao().insertUser(user)
+        localRepository.insertUser(user)
+    }
+
+    suspend fun getUser(email: String, password: String): UserEntity{
+        return localRepository.getUser(email, password)
     }
 }

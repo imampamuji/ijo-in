@@ -2,21 +2,30 @@ package com.example.ijo_in.ui.register
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.ijo_in.AppRepository
 import com.example.ijo_in.data.local.AppDatabase
-import com.example.ijo_in.data.local.UserEntity
+import com.example.ijo_in.data.local.entity.UserEntity
+import com.example.ijo_in.di.repositoryModule
+import kotlinx.coroutines.launch
 
-class RegisterViewModel(application: Application): AndroidViewModel(application){
+class RegisterViewModel(private val appRepository: AppRepository): ViewModel(){
 
-    private val appRepository: AppRepository
-    private val appDatabase: AppDatabase
+    private val isRegister = MutableLiveData<Boolean>()
 
-    init {
-        appDatabase = AppDatabase.getInstance(application)!!
-        appRepository = AppRepository(appDatabase)
-    }
+    fun observeIsRegister(): LiveData<Boolean> = isRegister
 
-    suspend fun insertUser(entity: UserEntity){
-        appRepository.insertUser(entity)
+    fun insertUser(user: UserEntity) {
+        viewModelScope.launch {
+            try {
+                appRepository.insertUser(user)
+                isRegister.postValue(true)
+            } catch (e: Throwable){
+                e.printStackTrace()
+            }
+        }
     }
 }

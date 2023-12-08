@@ -1,4 +1,4 @@
-package com.example.ijo_in.data.local
+package com.example.ijo_in.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
