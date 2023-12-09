@@ -13,7 +13,10 @@ import kotlinx.coroutines.launch
 class LoginViewModel(private val appRepository: AppRepository): ViewModel(){
 
     private val isLogin = MutableLiveData<UserEntity>()
-    fun observeIsLogin(): LiveData<UserEntity> = isLogin
+    fun observeIsLogin(): LiveData<UserEntity?> = isLogin
+
+    private val errorMessage = MutableLiveData<String>()
+    fun observeErrorMessage(): LiveData<String> = errorMessage
 
     fun getDataLogin(email: String, password: String) {
         viewModelScope.launch {
@@ -25,4 +28,15 @@ class LoginViewModel(private val appRepository: AppRepository): ViewModel(){
             }
         }
     }
+//
+//    fun getDataLogin(email: String, password: String) {
+//        viewModelScope.launch {
+//            try {
+//                val result = appRepository.getUser(email, password)
+//                isLogin.postValue(result)
+//            } catch (e: Exception) {
+//                errorMessage.postValue("Login failed. Please check your credentials.")
+//            }
+//        }
+//    }
 }
