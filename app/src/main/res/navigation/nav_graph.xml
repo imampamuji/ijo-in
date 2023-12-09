@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.ijo_in.ui.HomeFragment"
+        android:name="com.example.ijo_in.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action

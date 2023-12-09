@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.ijo_in.R
 import com.example.ijo_in.databinding.FragmentNavigationParentBinding
+import com.example.ijo_in.ui.home.HomeFragment
 
 class NavigationParentFragment : Fragment() {
 

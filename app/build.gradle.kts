@@ -73,6 +73,18 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
 
+    //Moshi
+    implementation ("com.squareup.moshi:moshi:1.14.0")
+    implementation ("com.squareup.moshi:moshi-kotlin:1.14.0")
+    kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.14.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.13.2")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+
 
 
 
