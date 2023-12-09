@@ -2,6 +2,7 @@ package com.example.ijo_in.di
 
 import com.example.ijo_in.data.remote.ApiService
 import com.example.ijo_in.utils.Constant.BASE_URL
+import com.example.ijo_in.utils.Constant.BASE_URL_PLANTS
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -19,7 +20,7 @@ val networkModule = module {
     }
     single {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URL_PLANTS)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()

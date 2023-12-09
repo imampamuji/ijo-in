@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ijo_in.data.remote.response.movie.Result
+import com.example.ijo_in.data.remote.response.plants.Data
 import com.example.ijo_in.databinding.FragmentHomeBinding
 import org.koin.android.ext.android.inject
-import org.koin.java.KoinJavaComponent.inject
 
 class HomeFragment : Fragment() {
 
@@ -18,7 +18,10 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by inject()
-    private var list: List<Result> = listOf()
+    private var listMovie: List<Result> = listOf()
+
+    private var listPlant: List<Data> = listOf()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,20 +30,23 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        init()
-        observeData()
+//        initMovie()
+//        observeDataMovie()
+
+        initPlant()
+        observeDataPlant()
 
         return binding.root
     }
 
-    private fun observeData() {
+    private fun observeDataPlant() {
         with(viewModel) {
-            observeMovie.observe(requireActivity()) {
+            observePlant.observe(requireActivity()) {
                 it.let { data ->
-                    list = data.body()?.results ?: listOf()
-                    Log.d("data home", list.toString())
+                    listPlant = data.body()?.data ?: listOf()
+                    Log.d("data home", listPlant.toString())
                     with(binding.rvPlant) {
-                        adapter = HomeAdapter(list)
+                        adapter = HomeAdapterPlants(listPlant)
                         layoutManager = LinearLayoutManager(requireActivity())
                     }
                 }
@@ -49,7 +55,27 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun init() {
+    private fun initPlant() {
+        viewModel.getPlants()
+    }
+
+    private fun observeDataMovie() {
+        with(viewModel) {
+            observeMovie.observe(requireActivity()) {
+                it.let { data ->
+                    listMovie = data.body()?.results ?: listOf()
+                    Log.d("data home", listMovie.toString())
+                    with(binding.rvPlant) {
+                        adapter = HomeAdapterMovie(listMovie)
+                        layoutManager = LinearLayoutManager(requireActivity())
+                    }
+                }
+
+            }
+        }
+    }
+
+    private fun initMovie() {
         viewModel.getMovies()
     }
 
