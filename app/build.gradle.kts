@@ -39,6 +39,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -83,6 +84,10 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.14.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.13.2")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+// gif
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
+
 
 
 

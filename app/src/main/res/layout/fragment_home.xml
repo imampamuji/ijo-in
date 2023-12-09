@@ -6,29 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
     android:orientation="vertical"
-    android:paddingHorizontal="24dp">
+    android:paddingHorizontal="24dp"
+    android:background="@color/greensoft">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="iJoin"
-        android:textColor="@color/greenijoin"
-        android:textSize="36sp" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="iJoin"
+            android:fontFamily="@font/montserratblack"
+            android:textColor="@color/greenijoin"
+            android:textSize="40sp" />
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/plantgrow"/>
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="Find your plant"
+        android:layout_marginBottom="18dp"
+        android:text="Get to know the plants here 👇"
         android:textColor="@color/greenijoin"
+        android:fontFamily="@font/montserratreguler"
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_plant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_plant" />
+        tools:listitem="@layout/search_plants_item"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

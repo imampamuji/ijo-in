@@ -7,14 +7,22 @@
     tools:context=".ui.login.LoginFragment">
 
 
-    <ImageView
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/banner_login" />-->
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="477dp"
+        android:layout_height="298dp"
+        android:src="@drawable/hugplant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner_login" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
@@ -52,12 +60,11 @@
 
             <EditText
                 android:id="@+id/etEmail"
+                android:hint="Your Email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Email"
-                android:textColor="#40744C"
+                android:textColor="@color/greenijoinlow"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,10 +82,9 @@
                 android:id="@+id/etPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:hint="Your Password"
                 android:textColor="#40744C"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
