@@ -15,7 +15,6 @@ import org.koin.android.ext.android.inject
 
 class LoginFragment : Fragment() {
 
-
     private  var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LoginViewModel by inject()
@@ -33,11 +32,6 @@ class LoginFragment : Fragment() {
 
     private fun observeData() {
         with(viewModel) {
-//            observeIsLogin().observe(requireActivity()) { data ->
-//                if (data != null) {
-//                    findNavController().navigate(R.id.action_loginFragment_to_navigationParentFragment)
-//                }
-//            }
             observeIsLogin().observe(requireActivity()) {
                 it.let { data ->
                     if (data != null) {
